@@ -1,0 +1,19 @@
+class Solution {
+    //Function to check if the linked list has a loop.
+    public static boolean detectLoop(Node head){
+        // Add code here
+        Node s=head;
+        Node f=head;
+        while(s!= null && f != null
+               && f.next != null)
+        {
+            s=s.next;
+            f=f.next.next;
+        }
+        if(s==f)
+        {
+            return true;
+        }
+        return false;
+    }
+}
