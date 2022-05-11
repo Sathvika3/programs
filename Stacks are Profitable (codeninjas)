@@ -6,14 +6,13 @@ public class Solution{
     public static int maximumProfit(ArrayList<Integer> prices){
         // Write your code here.
 		int mP=0;
+		int minP=Integer.MAX_VALUE;
+		
 		for(int i=0;i<prices.size();i++){
-			for(int j=i+1;j<prices.size();j++)
-			{
-				if(prices.get(j)>prices.get(i))
-					mP=Math.max(prices.get(j)-prices.get(i),mP);
-					
+			minP=Math.min(minP,prices.get(i));
+			mP=Math.max(mP,prices.get(i)-minP);
+			
 			}
-		}
 		return mP;
     }
 }
